@@ -10,7 +10,7 @@ $(document).ready(
             });
             var req = {};
             var country = "https://restcountries.eu/rest/v2/name/"+ result.nome +"?fullText=true"
-            $.get(country ,function(data){
+            $.get(country ,function(data, textStatus){
                     req['nome']=data[0].alpha2Code;
                     var sender = JSON.stringify(req);
                     $.ajax({
