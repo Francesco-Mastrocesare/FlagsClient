@@ -12,6 +12,7 @@ $(document).ready(
             var country = "https://restcountries.eu/rest/v2/name/"+ result.nome +"?fullText=true"
             $.get(country ,function(data, textStatus){
                     req['nome']=data[0].alpha2Code;
+                    console.log(data[0]);
                     var sender = JSON.stringify(req);
                     $.ajax({
                         type: 'POST',
@@ -28,6 +29,9 @@ $(document).ready(
                             }
                         }
                     });
+                }).fail(function()
+                {
+                    alert("No country found");
                 });
             });
        
