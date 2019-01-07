@@ -1,8 +1,7 @@
 
 $(document).ready(
     function(){
-        loadData();
-        $("#studentPost").on('submit',function(e){
+        $("#countryForm").on('submit',function(e){
             e.preventDefault();
             var result = { };
             $.each($(this).serializeArray(), function() {
@@ -39,8 +38,3 @@ $(document).ready(
 
         
     });
-
-
-    function loadData(){
-      
-    }
